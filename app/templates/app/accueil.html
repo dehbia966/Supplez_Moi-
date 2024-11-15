@@ -1,0 +1,60 @@
+{% load static %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accueil</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'Css/Liste.css' %}"> 
+</head>
+<body>
+    {% include 'app/menu.html' %}
+    
+    <script src="{% static 'confirm_delete.js' %}"></script>  
+   
+  
+
+    <h2>Demandes en attente de traitement</h2>
+    <p>{{ response_content }}</p>
+    <table class="data-table">
+        <tr>
+            <th>Motif</th>
+            <th>Accord Suppleant</th>
+            <th>Inputation Salaire</th>
+            <th>CPO</th>
+            
+            <th>Cours - Code</th>
+            <th>Cours - Intitulé</th>
+            <th>Cours - Option</th>
+            <th>Cours - Programme</th>
+            <th>Suppleant - Nom</th>
+            <th>Suppleant - Prénom</th>
+            <th>Actions</th>
+        </tr>
+        {% for demande in demandes_utilisateur %}
+        <tr>
+            <td>{{ demande.motif }}</td>
+            <td>{{ demande.accord_suppleant }}</td>
+            <td>{{ demande.inputation_salaire }}</td>
+            <td>{{ demande.cpo }}</td>
+           
+            <td>{{ demande.cours__code }}</td>
+            <td>{{ demande.cours__intitule }}</td>
+            <td>{{ demande.cours__option }}</td>
+            <td>{{ demande.cours__programme }}</td>
+            <td>{{ demande.supleant__suppleant_nom }}</td>
+            <td>{{ demande.supleant__suppleant_prenom }} </td>           
+            <td class="actions">               
+                <a href="{% url 'Modify' demande.id %}" > Modifier</a>  <br> <br> <br>
+
+                <a href="{% url 'Delete' pk=demande.id %}" class="delete-link" > Supprimer</a> 
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    
+</body>
+</html>

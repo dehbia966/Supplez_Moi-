@@ -1,0 +1,39 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demande traiter</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'Css/demande_traiter.css' %}"> <!-- Utilisation du nouveau style -->
+</head>
+<body>
+
+{% include 'app/menu.html' %}
+ 
+
+<div class="formulaire-container">
+    <h1 class="formulaire-title">Demandes Traiter</h1>  
+    <div class="data-container">
+        {% for demande in demandes_utilisateur %}
+        <div class="data-card">
+            <p><strong>Motif:</strong> {{ demande.motif }}</p>
+            <p><strong>Accord Suppleant:</strong> {{ demande.accord_suppleant }}</p>
+            <p><strong>Inputation Salaire:</strong> {{ demande.inputation_salaire }}</p>
+            <p><strong>CPO:</strong> {{ demande.cpo }}</p>
+            <p><strong>Cours - Code:</strong> {{ demande.cours__code }}</p>  
+            <p><strong>Cours - Intitule:</strong> {{ demande.cours__intitule }}</p>               
+            <p><strong>Cours - Option:</strong> {{ demande.cours__option }}</p>
+            <p><strong>Cours - Programme:</strong> {{ demande.cours__programme }}</p>
+            <p><strong>Suppleant - Nom:</strong> {{ demande.supleant__suppleant_nom }}</p>
+            <p><strong>Suppleant - Prénom:</strong> {{ demande.supleant__suppleant_prenom }}</p>  
+            <p><strong>Remarque:</strong> {{ demande.remarque }}</p> 
+            <p><strong>Salaire:</strong> {{ demande.salaire }}</p>
+            <p><strong>accord_cf:</strong> {{ demande.accord_cf }}</p>          
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+</body>
+</html>

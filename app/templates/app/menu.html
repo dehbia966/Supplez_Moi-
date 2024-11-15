@@ -1,0 +1,25 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accueil</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'Css/menu_principale.css' %}">
+</head>
+<body class="page-body">
+    <div class="menu-menu-menu">
+        <div>
+            <span>Bienvenue, {{ nom_utilisateur }}</span>
+          
+        </div>
+        <div>
+            <a href="/Accueil">Accueil</a>
+            <a href=" /Add_Request">Ajouter une nouvelle demande</a>
+            <a href="/demande_encours">Demande en cours de traitement</a>
+            <a href="/demande_traiter">Demande Traiter</a>
+            <a href="/LogOut">Déconnecter</a>
+           
+        </div class="content-container">
+    </div>
+</body>

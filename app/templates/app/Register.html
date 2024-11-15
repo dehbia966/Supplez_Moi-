@@ -1,0 +1,29 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accueil</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'Css/formulaire_add.css' %}"> 
+    <title>register in the database</title>
+   
+</head>
+<body>
+    <h2 class="formulaire-title">Enregistrement d'un nouveau compte utilisateur </h2>
+    <div class="formulaire-container">
+    <form method='post' class="formulaire-form champs-formulaire" >
+        
+        {% csrf_token %}
+        {{ form.as_p }}
+    
+        <button type="submit"  class="formulaire-button" name="register">sign up</button>
+        <br> <br> 
+        
+        <button type="submit" class="formulaire-button"  name="login"><a  href="/LogIn" > Login</a> </button>
+          
+    </form>
+    </div>
+
+</body>
+</html>

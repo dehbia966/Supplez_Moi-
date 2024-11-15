@@ -1,0 +1,52 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajouter une demande</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'Css/formulaire_add.css' %}"> 
+</head>
+
+<body>
+    {% include 'app/menu.html' %}
+    
+    <div class="formulaire-container">
+        
+        <h2 class="formulaire-title">Ajouter une nouvelle demande de suppléance</h2>
+        
+        <!-- Affichage des messages d'erreur et des avertissements -->
+        {% if messages %}
+        <ul class="messages">
+            {% for message in messages %}
+                <li class="error">{{ message }}</li>
+            {% endfor %}
+        </ul>
+
+    {% endif %}
+
+       
+        <form method="post" class="formulaire-form champs-formulaire" >
+            {% csrf_token %}
+            <div class="champs-formulaire">
+                {% for field in form %}
+                    {% if field.name != "csrfmiddlewaretoken" and field.name != "field_name_to_remove" %}
+                        <div class="field-wrapper">
+                            <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+                            {{ field }}
+                            {% for error in field.errors %}
+                                <div class="error">{{ error }}</div>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            </div>
+
+
+            <button class="formulaire-button" type="submit">Enregistrer</button>
+        </form>
+    </div>
+    <script src="{% static 'alerte.js' %}"></script>  
+
+</body>
+</html>

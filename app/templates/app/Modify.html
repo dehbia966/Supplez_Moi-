@@ -1,0 +1,35 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{% static 'Css/formulaire_add.css' %}"> 
+    <title>Modifier Demande</title>
+</head>
+<body>
+    {% include 'app/menu.html' %}
+    
+    <div class="formulaire-container">
+        <h1 class="formulaire-title ">Modifier Demande</h1>
+    
+    <!-- Affichage des messages d'erreur -->
+    {% if messages %}
+        <div class="messages">
+            {% for message in messages %}
+                {% if message.tags == 'error' %}
+                    <div class="message error">{{ message }}</div>
+                {% endif %}
+                
+            {% endfor %}
+        </div>
+    {% endif %}
+    
+    <form method="post" class="formulaire-form champs-formulaire">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="formulaire-button">Enregistrer</button>
+    </form>
+    </div>
+</body>
+</html>
