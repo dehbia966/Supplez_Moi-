@@ -1,0 +1,106 @@
+.formulaire-body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    margin: 0;
+    padding: 20px; /* Espacement autour du formulaire */
+}
+
+.formulaire-container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 600px; /* Largeur maximale du formulaire */
+    margin: auto; /* Centre le formulaire horizontalement */
+    transition: box-shadow 0.3s ease;
+}
+
+.formulaire-title {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.formulaire-input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    transition: border-color 0.3s ease;
+}
+
+.formulaire-button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.formulaire-button:hover {
+    background-color: #0056b3;
+}
+
+.formulaire-link {
+    color: #007bff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.formulaire-link:hover {
+    color: #0056b3;
+}
+
+.champs-formulaire {
+    margin-bottom: 20px; /* Espacement entre les champs */
+}
+
+.champs-formulaire label {
+    display: block; /* Afficher les labels sur une nouvelle ligne */
+    margin-bottom: 5px; /* Espacement entre les labels et les champs */
+}
+
+.champs-formulaire input[type="text"],
+.champs-formulaire input[name="password1"],
+.champs-formulaire input[name="password2"],
+.champs-formulaire input[name="email"],
+.champs-formulaire input[type="number"],
+.champs-formulaire textarea {
+    width: calc(100% - 22px); /* Largeur du champ avec bordure incluse */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+.champs-formulaire select {
+    width: calc(100% - 22px); /* Largeur du champ avec bordure incluse */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    background-color: #fff;
+    color: #555;
+}
+
+.message.error {
+    background-color: #ffcccc; /* Couleur de fond */
+    color: #cc0000; /* Couleur du texte */
+    border: 1px solid #cc0000; /* Bordure */
+    padding: 10px; /* Espacement intérieur */
+    margin-bottom: 10px; /* Marge en bas */
+}
+
+/* CSS pour les messages d'avertissement */
+.message.warning {
+    background-color: #ffffcc; /* Couleur de fond */
+    color: #ff9900; /* Couleur du texte */
+    border: 1px solid #ff9900; /* Bordure */
+    padding: 10px; /* Espacement intérieur */
+    margin-bottom: 10px; /* Marge en bas */
+}

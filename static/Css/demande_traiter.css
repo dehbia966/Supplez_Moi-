@@ -1,0 +1,31 @@
+.formulaire-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.formulaire-title {
+    text-align: center;
+}
+
+.data-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.data-card {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 20px;
+}
+
+.data-card p {
+    margin: 0;
+}
+
+.data-card p strong {
+    font-weight: bold;
+    margin-right: 5px;
+}
